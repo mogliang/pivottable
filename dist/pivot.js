@@ -1541,8 +1541,9 @@
                 newDropdown = $("<select>").addClass('pvtAttrDropdown').append($("<option>")).bind("change", function() {
                   return refresh();
                 });
-                for (u = 0, len4 = shownAttributes.length; u < len4; u++) {
-                  attr = shownAttributes[u];
+                var aggregatorAttributes=opts.aggregatorAttributes || shownAttributes;
+                for (u = 0, len4 = aggregatorAttributes.length; u < len4; u++) {
+                  attr = aggregatorAttributes[u];
                   newDropdown.append($("<option>").val(attr).text(attr));
                 }
                 pvtVals.append(newDropdown);
